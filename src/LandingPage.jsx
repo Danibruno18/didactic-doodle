@@ -1,7 +1,6 @@
 import React from 'react';
 
 const LandingPage = () => {
-  // Dados fictícios para simular o catálogo
   const catalogo = {
     camisetas: [
       { id: 1, nome: "Camiseta 'Tá Pago'", preco: "R$ 69,90", tag: "Engraçada", cor: "bg-blue-100" },
@@ -27,7 +26,6 @@ const LandingPage = () => {
     ]
   };
 
-  // Componente reutilizável para renderizar as seções de produtos
   const SecaoProdutos = ({ titulo, produtos, id }) => (
     <section id={id} className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold mb-8 text-gray-800 border-b-2 border-indigo-500 pb-2 inline-block">
@@ -36,11 +34,9 @@ const LandingPage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {produtos.map((produto) => (
           <div key={produto.id} className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white border border-gray-100">
-            {/* Placeholder da Imagem com cor dinâmica */}
             <div className={`h-64 flex items-center justify-center ${produto.cor}`}>
               <span className="font-semibold opacity-70">Imagem da Estampa</span>
             </div>
-            
             <div className="p-5">
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-lg font-bold text-gray-800">{produto.nome}</h3>
@@ -61,8 +57,6 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
-      
-      {/* 1. Hero Header */}
       <header className="relative bg-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-80 mix-blend-multiply"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
@@ -83,9 +77,8 @@ const LandingPage = () => {
         </div>
       </header>
 
-      {/* Menu de Navegação Rápida (Opcional, mas bom para UX) */}
       <nav className="sticky top-0 bg-white shadow-md z-50">
-        <ul className="flex overflow-x-auto gap-6 px-4 py-4 max-w-7xl mx-auto text-sm font-semibold text-gray-600 justify-start md:justify-center hide-scrollbar">
+        <ul className="flex overflow-x-auto gap-6 px-4 py-4 max-w-7xl mx-auto text-sm font-semibold text-gray-600 justify-start md:justify-center">
           <li><a href="#camisetas" className="hover:text-indigo-600 transition-colors">Camisetas</a></li>
           <li><a href="#tops" className="hover:text-indigo-600 transition-colors">Tops</a></li>
           <li><a href="#calcas" className="hover:text-indigo-600 transition-colors">Calças</a></li>
@@ -95,27 +88,17 @@ const LandingPage = () => {
       </nav>
 
       <main>
-        {/* 2. Camisetas */}
         <SecaoProdutos titulo="Camisetas" produtos={catalogo.camisetas} id="camisetas" />
-
-        {/* 3. Top */}
         <div className="bg-gray-100">
           <SecaoProdutos titulo="Tops" produtos={catalogo.tops} id="tops" />
         </div>
-
-        {/* 4. Calças */}
         <SecaoProdutos titulo="Calças" produtos={catalogo.calcas} id="calcas" />
-
-        {/* 5. Legging */}
         <div className="bg-gray-100">
           <SecaoProdutos titulo="Leggings" produtos={catalogo.leggings} id="leggings" />
         </div>
-
-        {/* 6. Bermudas */}
         <SecaoProdutos titulo="Bermudas" produtos={catalogo.bermudas} id="bermudas" />
       </main>
 
-      {/* Footer Básico */}
       <footer className="bg-gray-900 text-gray-400 py-8 text-center">
         <p>&copy; 2026 GymStyle & Humor. Todos os direitos reservados.</p>
       </footer>
