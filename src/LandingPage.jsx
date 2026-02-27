@@ -64,7 +64,7 @@ const LandingPage = () => {
             Treine com <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Estilo</span> e <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500">Humor</span>
           </h1>
           <p className="text-lg md:text-2xl mb-8 max-w-2xl text-gray-200">
-            A loja definitiva para quem leva o treino a sério, mas não perde a piada. Descubra nossas estampas exclusivas.
+            A loja definitiva para quem leva o treino a sério. Descubra nossas estampas exclusivas.
           </p>
           <div className="flex gap-4">
             <a href="#camisetas" className="bg-white text-gray-900 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
